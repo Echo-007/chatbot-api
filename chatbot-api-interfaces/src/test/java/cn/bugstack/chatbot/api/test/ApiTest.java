@@ -18,10 +18,10 @@ public class ApiTest {
     @Test
     public void query_unanswered_question() throws IOException {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-//      188482452814222
-        HttpGet get = new HttpGet("https://api.zsxq.com/v2/groups/188482452814222/topics?scope=unanswered_questions&count=20&end_time=2023-11-21T18:43:09.289+0800");
 
-        get.addHeader("cookie", "abtest_env=product; zsxq_access_token=6098A126-D41B-1DB2-7970-96E26C138E77_7BA580FF758DDC15; zsxqsessionid=d2391c3ece08497c787e8711e6964c1d");
+        HttpGet get = new HttpGet("https://api.zsxq.com/v2/groups/88885122124822/topics?scope=unanswered_questions&count=20");
+
+        get.addHeader("cookie", "abtest_env=product; zsxq_access_token=6098A126-D41B-1DB2-7970-96E26C138E77_7BA580FF758DDC15; zsxqsessionid=eef865b37ca68c08b79d1a37d7cd9d50");
         get.addHeader("Content-Type", "application/json; charset=utf8");
 
         CloseableHttpResponse response = httpClient.execute(get);
@@ -41,7 +41,7 @@ public class ApiTest {
         post.addHeader("Content-Type", "application/json; charset=utf8");
 
         String paramJson = "{\"req_data\":{\"text\":\"" +
-                "我最爱的是云云" +
+                "回答内容" +
                 "\\n7\",\"image_ids\":[],\"silenced\":true}}";
 
         StringEntity stringEntity = new StringEntity(paramJson, ContentType.create("text/json", "UTF-8"));
@@ -55,6 +55,8 @@ public class ApiTest {
             System.out.println(response.getStatusLine().getStatusCode());
         }
     }
+
+
 
 }
 
