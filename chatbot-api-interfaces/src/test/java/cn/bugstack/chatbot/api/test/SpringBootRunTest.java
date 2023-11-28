@@ -46,6 +46,7 @@ public class SpringBootRunTest {
             // 打印问题
             logger.info("topicId：{} text：{}", topicId, text);
 
+
             // 回答问题
 //            zsxqApi.answer(groupId, cookie, topicId, text, false);
         }
